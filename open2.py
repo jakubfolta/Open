@@ -16,6 +16,7 @@ result.rise_for_status()
 result_text = bs4.BeautifulSoup(result.text)
 link_elements = result_text.select('.r a')
 
-# TODO: Open new tabs with top links using webbrowser module.
+# Open new tabs with top links using webbrowser module.
 tabs_opened = min(3, len(link_elements))
-for i in range
+for i in range(tabs_opened):
+    webbrowser.open('http://google.com' + link_elements[i].get('href'))
