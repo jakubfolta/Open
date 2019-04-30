@@ -4,6 +4,9 @@
 
 # TODO: Import essential modules.
 import sys
+import requests
+import bs4
+import webbrowser
 
 # TODO: Download the google page with entered search words with requests module.
 # TODO: Parse this site and retrieve top search results with bs4 module.
