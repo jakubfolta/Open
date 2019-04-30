@@ -16,6 +16,7 @@ result.raise_for_status()
 result_text = bs4.BeautifulSoup(result.text)
 link_elements = result_text.select('.r a')
 
-# TODO: Open a browser tab for each result.
+# Open a browser tab for each result.
 opened_numbers = min(3, len(link_elements))
-for i in range()
+for i in range(opened_numbers):
+    webbrowser.open('http://google.com' + link_elements[i].get('href'))
