@@ -17,3 +17,5 @@ result_text = bs4.BeautifulSoup(result.text)
 link_elements = result_text.select('.r a')
 
 # TODO: Open a browser tab for each result.
+opened_numbers = min(3, len(link_elements))
+for i in range()
