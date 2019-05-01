@@ -16,4 +16,9 @@ result.raise_for_status()
 result_text = bs4.BeautifulSoup(result.text)
 link_elements = result_text.select('.r a')
 
-# TODO: Open every link in new tab using webbrowser.
+# Set variable with minimum amount of tabs to be opened.
+tabs_opened = min(3, len(link_elements))
+
+# Open every link in new tab using webbrowser.
+for i in range(tabs_opened):
+    webbrowser.open('http://google.com' + link_elements[i].get('href'))
