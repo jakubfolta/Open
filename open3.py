@@ -8,9 +8,12 @@ import requests
 import bs4
 import webbrowser
 
-# TODO: Download the google search page with words entered in command line with requests module.
+# Download the google search page with words entered in command line with requests module.
 result = requests.get('http://google.com/search?q=' + ' '.join(sys.argv[1:]))
 result.raise_for_status()
 
-# TODO: Parse this site and retrieve top search results using bs4 module.
+# Parse this site and retrieve top search results using bs4 module.
+result_text = bs4.BeautifulSoup(result.text)
+link_elements = result_text.select('.r a')
+
 # TODO: Open every link in new tab using webbrowser.
