@@ -7,6 +7,7 @@ import sys
 import webbrowser
 import requests
 import bs4
+import pyperclip
 
 # Download google search site with requests module.
 # Or by using pyperclip module and copied words.
