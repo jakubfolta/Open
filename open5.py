@@ -13,7 +13,7 @@ import pyperclip
 # Or using pyperclip module and copied words.
 keywords = ' '.join(sys.argv[1:]) if len(sys.argv) > 1 else pyperclip.paste()
 
-result = requests.get('https://www.google.com/search?client=' + ' '.join(sys.argv[1:]))
+result = requests.get('https://www.google.com/search?client=' + keywords)
 result.raise_for_status()
 
 # Parse this site and retrieve link elements using bs4 module.
