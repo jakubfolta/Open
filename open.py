@@ -9,7 +9,10 @@ import requests
 import bs4
 
 # Download google search site with requests module.
-result = requests.get('http://google.com/search?q=' + ' '.join(sys.argv[1:]))
+# Or by using pyperclip module and copied words.
+keywords = ' '.join(sys.argv[1:]) if len(sys.argv) > 1 else pyperclip.paste()
+
+result = requests.get('http://google.com/search?q=' + keywords)
 result.raise_for_status()
 
 # Parse this site and retrieve top search results links with bs4.
