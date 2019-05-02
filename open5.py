@@ -7,8 +7,11 @@ import sys
 import requests
 import bs4
 import webbrowser
+import pyperclip
 
 # Download google search site with searched words from command line using requests module.
+# Or using pyperclip module and copied words.
+keywords = 
 result = requests.get('https://www.google.com/search?client=' + ' '.join(sys.argv[1:]))
 result.raise_for_status()
 
