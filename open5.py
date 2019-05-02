@@ -11,7 +11,8 @@ import pyperclip
 
 # Download google search site with searched words from command line using requests module.
 # Or using pyperclip module and copied words.
-keywords = 
+keywords = ' '.join(sys.argv[1:]) if len(sys.argv) > 1 else pyperclip.paste()
+
 result = requests.get('https://www.google.com/search?client=' + ' '.join(sys.argv[1:]))
 result.raise_for_status()
 
